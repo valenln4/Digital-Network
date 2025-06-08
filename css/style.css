@@ -44,7 +44,7 @@ body {
 
 /* Hero Section */
 .hero-section {
-  background-image: url('/img/nav.jpg');
+  background-image: url('img/nav.jpg');
   background-size: cover;
   background-position: center;
   color: white;
