@@ -44,7 +44,7 @@ input:checked + .theme-slider:before {
   transform: translateX(26px);
 }
 
-/* Dark mode specific styles */
+/* Dark mode styles */
 [data-bs-theme="dark"] {
   color: #f8f9fa;
   background-color: #121212;
