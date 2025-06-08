@@ -13,6 +13,7 @@ const ASSETS_TO_CACHE = [
   '/img/tristan_harris.webp',
   '/img/tim_kendall.jpg',
   '/img/jeff_seibert.png',
+  '/img/nav.jpg',
   'https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css',
   'https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js',
   'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'
