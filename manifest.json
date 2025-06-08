@@ -1,0 +1,21 @@
+{
+  "name": "Digital Network",
+  "short_name": "DN",
+  "description": "Herramienta para el uso consciente de redes sociales",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#323131",
+  "theme_color": "#323131",
+  "icons": [
+    {
+      "src": "img/favic0n-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "img/favic0n-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
