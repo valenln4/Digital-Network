@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
   const statsContainer = document.getElementById('statsContainer');
   
-  // Simular datos de API (en un proyecto real usarías fetch)
   setTimeout(() => {
     const statsData = [
       { title: "Horas promedio en redes", value: "2h 45m", trend: "up" },
@@ -37,14 +36,12 @@ document.addEventListener('DOMContentLoaded', function() {
 //
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Variables globales
     let currentChart = null;
     const chartElement = document.getElementById('mainChart');
     const chartTitle = document.getElementById('chartTitle');
     const chartSource = document.getElementById('chartSource');
     const chartSelector = document.getElementById('chartSelector');
 
-    // Datos para los gráficos
     const chartsData = {
         usage: {
             title: "Uso Diario Promedio",
@@ -153,21 +150,17 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
-    // Función para renderizar gráfico
+
     function renderChart(chartKey) {
-        // Destruir gráfico anterior si existe
         if (currentChart) {
             currentChart.destroy();
         }
 
-        // Obtener configuración del gráfico seleccionado
         const chartConfig = chartsData[chartKey];
         
-        // Actualizar título y fuente
         chartTitle.textContent = chartConfig.title;
         chartSource.textContent = chartConfig.source;
         
-        // Crear nuevo gráfico
         currentChart = new Chart(
             chartElement.getContext('2d'),
             {
@@ -178,15 +171,12 @@ document.addEventListener('DOMContentLoaded', function() {
         );
     }
 
-    // Manejar cambio de selección
     chartSelector.addEventListener('change', function() {
         renderChart(this.value);
     });
 
-    // Inicializar con el primer gráfico
     renderChart('usage');
 
-    // Redimensionar gráfico cuando cambia el tamaño de la ventana
     window.addEventListener('resize', function() {
         if (currentChart) {
             currentChart.resize();
