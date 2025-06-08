@@ -1,9 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // 1. Frase motivadora del día (API)
+    
     const quoteContainer = document.getElementById('quoteContainer');
     const newQuoteBtn = document.getElementById('newQuoteBtn');
     
-    // API de frases motivadoras (podemos cambiar a otra API si lo deseas)
     const QUOTE_API = 'https://type.fit/api/quotes';
     
     async function fetchQuote() {
@@ -29,9 +28,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     newQuoteBtn.addEventListener('click', fetchQuote);
-    fetchQuote(); // Cargar primera frase al entrar
+    fetchQuote(); 
 
-    // 2. Consejos prácticos
+ //
     const adviceContainer = document.getElementById('adviceContainer');
     const adviceList = [
         {
@@ -82,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
         `;
     });
 
-    // 3. Test de adicción a redes sociales
+    // 
     const testForm = document.getElementById('addictionTestForm');
     const questionsContainer = document.getElementById('questionsContainer');
     const testResult = document.getElementById('testResult');
@@ -99,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function() {
         "¿Prefieres interactuar en redes antes que en persona?"
     ];
 
-    // Generar preguntas del test
+  
     testQuestions.forEach((question, index) => {
         questionsContainer.innerHTML += `
             <div class="test-question">
@@ -124,14 +123,14 @@ document.addEventListener('DOMContentLoaded', function() {
         `;
     });
 
-    // Calcular resultado
+
     testForm.addEventListener('submit', function(e) {
         e.preventDefault();
         
         let totalScore = 0;
-        const maxScore = testQuestions.length * 3; // Máximo posible
+        const maxScore = testQuestions.length * 3; 
         
-        // Sumar puntajes
+
         testQuestions.forEach((_, index) => {
             const selectedOption = document.querySelector(`input[name="q${index}"]:checked`);
             totalScore += parseInt(selectedOption.value);
@@ -140,11 +139,11 @@ document.addEventListener('DOMContentLoaded', function() {
         // Calcular porcentaje
         const percentage = Math.round((totalScore / maxScore) * 100);
         
-        // Mostrar resultado
+ 
         resultProgress.style.width = `${percentage}%`;
         resultProgress.textContent = `${percentage}%`;
         
-        // Mensaje según resultado
+
         let message;
         if (percentage >= 75) {
             message = "¡Cuidado! Tu uso de redes sociales parece ser muy alto. Considera hacer cambios significativos en tus hábitos digitales.";
@@ -165,7 +164,7 @@ document.addEventListener('DOMContentLoaded', function() {
         testForm.classList.add('d-none');
     });
 
-    // Volver a hacer el test
+
     retakeTestBtn.addEventListener('click', function() {
         testForm.reset();
         testResult.classList.add('d-none');
