@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Control del rango de horas
     const hoursRange = document.getElementById('hoursRange');
     const hoursValue = document.getElementById('hoursValue');
     
@@ -7,7 +6,6 @@ document.addEventListener('DOMContentLoaded', function() {
         hoursValue.textContent = this.value + ' horas';
     });
 
-    // Manejo del formulario
     const assessmentForm = document.getElementById('digitalAssessmentForm');
     const assessmentResult = document.getElementById('assessmentResult');
     const retakeButton = document.getElementById('retakeAssessment');
@@ -15,14 +13,11 @@ document.addEventListener('DOMContentLoaded', function() {
     assessmentForm.addEventListener('submit', function(e) {
         e.preventDefault();
         
-        // Simular cálculo de resultados
         calculateAssessment();
         
-        // Mostrar resultados
         assessmentForm.classList.add('d-none');
         assessmentResult.classList.remove('d-none');
         
-        // Scroll suave a resultados
         assessmentResult.scrollIntoView({ behavior: 'smooth' });
     });
     
@@ -34,23 +29,19 @@ document.addEventListener('DOMContentLoaded', function() {
         hoursRange.value = 5.5;
     });
 
-    // Función para calcular resultados (simulada)
     function calculateAssessment() {
         const hours = parseFloat(hoursRange.value);
         let score = 0;
         
-        // Lógica simple de puntuación (ejemplo)
         if (hours <= 2) score = 85;
         else if (hours <= 4) score = 65;
         else if (hours <= 6) score = 45;
         else score = 25;
         
-        // Actualizar la barra de progreso
         const progressBar = assessmentResult.querySelector('.progress-bar');
         progressBar.style.width = score + '%';
         progressBar.textContent = score + '% Consciente';
         
-        // Actualizar el texto descriptivo
         let description = '';
         if (score >= 75) description = 'muy consciente';
         else if (score >= 50) description = 'moderadamente consciente';
